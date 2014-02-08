@@ -1,1 +1,1 @@
-Wy first symfony app =)
+My first symfony app =)
