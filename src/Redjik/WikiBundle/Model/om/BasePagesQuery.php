@@ -52,12 +52,12 @@ use Redjik\WikiBundle\Model\PagesQuery;
  * @method Pages findOneByFullpath(string $fullpath) Return the first Pages filtered by the fullpath column
  * @method Pages findOneByParent(int $parent) Return the first Pages filtered by the parent column
  *
- * @method Pages[] findById(int $id) Return Pages objects filtered by the id column
- * @method Pages[] findByTitle(string $title) Return Pages objects filtered by the title column
- * @method Pages[] findByText(string $text) Return Pages objects filtered by the text column
- * @method Pages[] findByAlias(string $alias) Return Pages objects filtered by the alias column
- * @method Pages[] findByFullpath(string $fullpath) Return Pages objects filtered by the fullpath column
- * @method Pages[] findByParent(int $parent) Return Pages objects filtered by the parent column
+ * @method array findById(int $id) Return Pages objects filtered by the id column
+ * @method array findByTitle(string $title) Return Pages objects filtered by the title column
+ * @method array findByText(string $text) Return Pages objects filtered by the text column
+ * @method array findByAlias(string $alias) Return Pages objects filtered by the alias column
+ * @method array findByFullpath(string $fullpath) Return Pages objects filtered by the fullpath column
+ * @method array findByParent(int $parent) Return Pages objects filtered by the parent column
  */
 abstract class BasePagesQuery extends ModelCriteria
 {
