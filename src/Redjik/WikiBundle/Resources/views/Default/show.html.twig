@@ -1,0 +1,24 @@
+<h1>{{ page.title }}  </h1>
+<p>{{ page.text|parseLinks|wiki|raw }}</p>
+
+
+<h3>Доступное действо!</h3>
+<p><a href="{{ path('redjik_wiki_edit',{alias:page.fullpath}) }}">Редактировать</a>
+    <a href="{{ path('redjik_wiki_delete',{alias:page.fullpath}) }}">Удалить</a>
+    <a href="{{ path('redjik_wiki_add',{alias:page.fullpath}) }}">Добавить дочку</a>
+</p>
+
+{% if page.getPagesRelatedByParent() is not empty %}
+    <h3>Родительская страница:</h3>
+    <p><a href="{{ path('redjik_wiki_show',{alias:page.getPagesRelatedByParent().fullpath}) }}">{{ page.getPagesRelatedByParent().title }}</a></p>
+{% endif %}
+
+{% if page.getPagessRelatedById() is not empty %}
+    <h3>Дочерние страницы:</h3>
+{% endif %}
+
+{% for spage in page.getPagessRelatedById() %}
+    <p><a href="{{ path('redjik_wiki_show',{alias:spage.fullpath}) }}">{{ spage.title }}</a></p>
+{% endfor %}
+
+

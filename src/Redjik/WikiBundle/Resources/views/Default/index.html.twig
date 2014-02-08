@@ -1,0 +1,12 @@
+<p>Привет! Это стартовая страница!</p>
+{% if pages is empty %}
+    <p>В нашей вики пока нет ни одной страницы.</p>
+{% endif %}
+
+{% for page in pages %}
+    <p><a href="{{ path('redjik_wiki_show',{alias:page.fullpath}) }}">{{ page.title }}</a></p>
+{% endfor %}
+<h3>Доступное действо!</h3>
+<p><a href="{{ path('redjik_wiki_add_new') }}">Добавить</a></p>
+
+

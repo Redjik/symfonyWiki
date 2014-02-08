@@ -1,0 +1,1 @@
+Wy first symfony app =)

@@ -1,0 +1,16 @@
+<h1>Удалить {{ page.title }} ?</h1>
+<p>Вы собираетесь удалить страницу.</p>
+{% if page.getPagessRelatedById() is not empty %}
+    <p>Вы точно хотите это сделать?</p>
+    <p>У этой страницы есть дочки, список будет ниже.
+    <p>В свою очередь у них тоже могут быть дочки.</p>
+    <p>И все это будет удалено, ведь мы пользумся FK CASCADE on DELETE</p>
+    <p>Можно было бы и RESTRICT сделать, что правильнее...</p>
+    <p>Но тогда придется усложнять логику.</p>
+{% endif %}
+
+{% for page in page.getPagessRelatedById() %}
+    <p><a href="{{ path('redjik_wiki_show',{alias:page.fullpath}) }}">{{ page.title }}</a></p>
+{% endfor %}
+
+{{ form(form, {'method': 'POST'}) }}

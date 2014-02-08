@@ -1,0 +1,13 @@
+parameters:
+#    redjik_wiki.example.class: Redjik\WikiBundle\Example
+
+services:
+    kernel.listener.wiki_exception_listener:
+        class: Redjik\WikiBundle\EventListener\ExceptionListener
+        tags:
+            - { name: kernel.event_listener, event: kernel.exception, method: onKernelException }
+
+    redjik_wiki.twig.redjik_wiki_twig_extension:
+        class: Redjik\WikiBundle\Twig\Extension
+        tags:
+            - { name: twig.extension }

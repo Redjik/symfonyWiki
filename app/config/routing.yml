@@ -1,0 +1,4 @@
+redjik_wiki:
+    resource: "@RedjikWikiBundle/Resources/config/routing.yml"
+    prefix:   /
+

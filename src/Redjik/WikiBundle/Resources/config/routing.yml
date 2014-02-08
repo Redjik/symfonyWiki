@@ -1,0 +1,33 @@
+redjik_wiki_homepage:
+    pattern:  /
+    defaults: { _controller: RedjikWikiBundle:Default:index }
+
+redjik_wiki_add_new:
+  pattern:  /add
+  defaults: {_controller: RedjikWikiBundle:Default:add, alias: /}
+  requirements:
+      alias: .+
+
+redjik_wiki_add:
+  pattern:  /{alias}/add
+  defaults: {_controller: RedjikWikiBundle:Default:add}
+  requirements:
+      alias: .+
+
+redjik_wiki_delete:
+  pattern:  /{alias}/delete
+  defaults: {_controller: RedjikWikiBundle:Default:delete}
+  requirements:
+      alias: .+
+
+redjik_wiki_edit:
+  pattern:  /{alias}/edit
+  defaults: {_controller: RedjikWikiBundle:Default:edit}
+  requirements:
+      alias: .+
+
+redjik_wiki_show:
+  pattern:  /{alias}
+  defaults: {_controller: RedjikWikiBundle:Default:show}
+  requirements:
+      alias: .+
